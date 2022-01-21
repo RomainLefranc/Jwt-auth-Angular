@@ -1,0 +1,16 @@
+<h3>Connexion</h3>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <label for="identifier">Identifiant: </label>
+  <input id="identifier" type="text" formControlName="identifier" required />
+
+  <label for="password">Mot de passe: </label>
+  <input id="password" type="password" formControlName="password" required />
+
+  <button type="submit" [disabled]="!loginForm.valid">Connexion</button>
+</form>
+<a href="{{ environment.apiUrl }}/api/connect/facebook"
+  >Se connecter avec Facebook</a
+>
+<p>Form Status: {{ loginForm.value | json }}</p>
+
+<p>Form Status: {{ loginForm.status }}</p>
